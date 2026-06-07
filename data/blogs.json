@@ -1,0 +1,19 @@
+[
+  {
+    "id": "843f1f63-983a-43c9-a45c-ca97e438a90e",
+    "slug": "mcp-servers",
+    "title": "MCP Servers",
+    "excerpt": "This is the short description of the blog.",
+    "content": "<p>This is the first blog of mine, where i am writing about the MCP servers.</p><p><code>This is the code</code> </p><ul><li><p>point 1</p></li><li><p>point 2</p></li></ul><p></p>",
+    "author": "Sahil Hans",
+    "publishedAt": "2026-06-07T06:01:16.056Z",
+    "updatedAt": "2026-06-07T06:01:16.056Z",
+    "readingTime": 1,
+    "tags": [
+      "MCP",
+      "Ai",
+      "Integration"
+    ],
+    "published": true
+  }
+]
