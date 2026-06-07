@@ -15,15 +15,15 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <main className="max-w-3xl mx-auto px-6 py-24">
-        <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
+      <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
           About me
         </h1>
-        <p className="text-lg text-muted-foreground mb-16 max-w-[56ch] text-pretty">
+        <p className="text-base sm:text-lg text-muted-foreground mb-12 md:mb-16 max-w-[56ch] text-pretty">
           {site.pitch}
         </p>
 
-        <div className="grid md:grid-cols-[1fr_200px] gap-12">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_200px] gap-8 md:gap-12">
           <div className="space-y-5">
             {site.bio.map((paragraph, i) => (
               <p
@@ -35,7 +35,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="relative">
+          <div className="flex justify-center md:justify-start">
             <div className="size-48 md:size-full max-w-[200px] rounded-xl overflow-hidden border border-border/60">
               <Image
                 src="/profile.jpg"
@@ -48,7 +48,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-16 pt-12 border-t border-border/60">
+        <div className="mt-12 md:mt-16 pt-10 md:pt-12 border-t border-border/60">
           <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-6">
             Connect
           </h2>

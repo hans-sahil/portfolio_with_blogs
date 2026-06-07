@@ -19,16 +19,16 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <main className="max-w-4xl mx-auto px-6 py-24">
-        <div className="mb-16">
+      <main className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        <div className="mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-xs font-mono text-muted-foreground mb-6">
             <BookOpen className="size-3" />
             Journal & Notes
           </div>
-          <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
             All posts
           </h1>
-          <p className="text-lg text-muted-foreground max-w-[56ch] text-pretty">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-[56ch] text-pretty">
             Thoughts on engineering, AI tooling, and building products.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default async function BlogPage() {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
             {posts.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}

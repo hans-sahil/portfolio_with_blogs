@@ -4,9 +4,10 @@ import type { BlogPostSummary } from "@/lib/types";
 
 interface BlogCardProps {
   post: BlogPostSummary;
+  featured?: boolean;
 }
 
-export function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post, featured = false }: BlogCardProps) {
   const date = new Date(post.publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -14,7 +15,13 @@ export function BlogCard({ post }: BlogCardProps) {
   });
 
   return (
-    <article className="group p-6 rounded-xl bg-card border border-border/60 hover:border-primary/30 transition-all duration-300">
+    <article
+      className={`group p-5 sm:p-6 rounded-xl bg-card border transition-all duration-300 ${
+        featured
+          ? "border-primary/30 ring-1 ring-primary/10 hover:border-primary/50 hover:ring-primary/20"
+          : "border-border/60 hover:border-primary/30"
+      }`}
+    >
       <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground mb-3">
         <span className="inline-flex items-center gap-1">
           <Calendar className="size-3" />
@@ -27,7 +34,9 @@ export function BlogCard({ post }: BlogCardProps) {
       </div>
 
       <Link href={`/blog/${post.slug}`}>
-        <h3 className="text-lg font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors">
+        <h3 className={`font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors ${
+          featured ? "text-xl" : "text-lg"
+        }`}>
           {post.title}
         </h3>
       </Link>

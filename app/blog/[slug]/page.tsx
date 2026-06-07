@@ -46,10 +46,10 @@ export default async function BlogPostPage({ params }: Props) {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <main className="max-w-3xl mx-auto px-6 py-24">
+      <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10 md:mb-12"
         >
           <ArrowLeft className="size-4" />
           Back to all posts
@@ -68,11 +68,11 @@ export default async function BlogPostPage({ params }: Props) {
               ))}
             </div>
 
-            <h1 className="text-3xl lg:text-4xl font-semibold tracking-tight leading-tight mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight mb-4">
               {post.title}
             </h1>
 
-            <p className="text-lg text-muted-foreground text-pretty mb-6">
+            <p className="text-base sm:text-lg text-muted-foreground text-pretty mb-6">
               {post.excerpt}
             </p>
 
@@ -85,13 +85,13 @@ export default async function BlogPostPage({ params }: Props) {
                 <Clock className="size-3.5" />
                 {post.readingTime} min read
               </span>
-              <span>·</span>
+              <span className="hidden xs:inline">·</span>
               <span>{post.author}</span>
             </div>
           </header>
 
           <div
-            className="prose prose-invert prose-sm max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-code:text-primary prose-code:bg-secondary prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-card prose-pre:border prose-pre:border-border/60 leading-relaxed"
+            className="prose prose-invert prose-sm sm:prose-base max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-code:text-primary prose-code:bg-secondary prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-card prose-pre:border prose-pre:border-border/60 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

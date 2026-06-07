@@ -34,9 +34,9 @@ export default async function Home() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-20 lg:py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-16">
+          <div className="flex flex-col-reverse lg:flex-row lg:items-center gap-10 lg:gap-16">
             <div className="flex-1">
               <p className="font-mono text-xs text-primary uppercase tracking-[0.2em] mb-4">
                 {site.role}
@@ -46,10 +46,10 @@ export default async function Home() {
                   <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-secondary text-[10px] font-mono text-muted-foreground uppercase tracking-wider mb-4">
                     Latest post
                   </div>
-                  <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-balance mb-4">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-balance mb-4">
                     {latestPost.title}
                   </h1>
-                  <p className="text-lg text-muted-foreground max-w-[56ch] text-pretty mb-6 leading-relaxed">
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-[56ch] text-pretty mb-6 leading-relaxed">
                     {latestPost.excerpt}
                   </p>
                   <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-muted-foreground mb-8">
@@ -69,13 +69,13 @@ export default async function Home() {
                   <div className="flex flex-wrap gap-4">
                     <Link
                       href={`/blog/${latestPost.slug}`}
-                      className="h-10 px-4 rounded-md bg-primary text-primary-foreground font-medium text-sm ring-1 ring-primary/20 hover:bg-primary/90 transition-transform active:scale-95 inline-flex items-center"
+                      className="h-10 px-4 rounded-md bg-primary text-primary-foreground font-medium text-sm ring-1 ring-primary/20 hover:bg-primary/90 transition-all active:scale-95 inline-flex items-center"
                     >
                       Read latest post
                     </Link>
                     <Link
                       href="/blog"
-                      className="h-10 px-4 rounded-md bg-secondary text-foreground font-medium text-sm ring-1 ring-black/5 hover:bg-secondary/80 transition-transform inline-flex items-center"
+                      className="h-10 px-4 rounded-md bg-secondary text-foreground font-medium text-sm ring-1 ring-black/5 hover:bg-secondary/80 transition-all inline-flex items-center"
                     >
                       All posts
                     </Link>
@@ -83,22 +83,22 @@ export default async function Home() {
                 </>
               ) : (
                 <>
-                  <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-balance mb-6">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-balance mb-6">
                     Engineering resilient systems and refined interfaces for the modern web.
                   </h1>
-                  <p className="text-lg text-muted-foreground max-w-[56ch] text-pretty mb-10 leading-relaxed">
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-[56ch] text-pretty mb-10 leading-relaxed">
                     {site.pitch}
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <Link
                       href="/blog"
-                      className="h-10 px-4 rounded-md bg-primary text-primary-foreground font-medium text-sm ring-1 ring-primary/20 hover:bg-primary/90 transition-transform active:scale-95 inline-flex items-center"
+                      className="h-10 px-4 rounded-md bg-primary text-primary-foreground font-medium text-sm ring-1 ring-primary/20 hover:bg-primary/90 transition-all active:scale-95 inline-flex items-center"
                     >
                       Read the blog
                     </Link>
                     <Link
                       href="/contact"
-                      className="h-10 pl-3 pr-3 rounded-md bg-secondary text-foreground font-medium text-sm ring-1 ring-black/5 hover:bg-secondary/80 transition-transform inline-flex items-center gap-2"
+                      className="h-10 pl-3 pr-3 rounded-md bg-secondary text-foreground font-medium text-sm ring-1 ring-black/5 hover:bg-secondary/80 transition-all inline-flex items-center gap-2"
                     >
                       Get in touch
                       <ArrowUpRight className="size-4 opacity-70" />
@@ -107,14 +107,14 @@ export default async function Home() {
                 </>
               )}
             </div>
-            <div className="lg:w-1/3 flex justify-start lg:justify-center">
+            <div className="lg:w-1/3 flex justify-center">
               <div className="relative group">
                 <div className="absolute -inset-4 rounded-full border border-border scale-95 group-hover:scale-100 transition-transform duration-500" />
-                <div className="size-48 lg:size-72 rounded-full relative z-10 overflow-hidden">
+                <div className="size-40 sm:size-48 lg:size-72 rounded-full relative z-10 overflow-hidden">
                   <Image
                     src="/profile.jpg"
                     fill
-                    sizes="(max-width: 1024px) 192px, 256px"
+                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 192px, 256px"
                     alt="Sahil Hans"
                     className="object-cover"
                     priority
@@ -127,9 +127,9 @@ export default async function Home() {
       </section>
 
       {/* Skills */}
-      <section className="py-24 px-6 border-t border-border/60">
+      <section className="py-16 md:py-20 lg:py-24 px-6 border-t border-border/60">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-4 gap-12">
+          <div className="grid lg:grid-cols-4 gap-8 lg:gap-12">
             <div>
               <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-4">
                 Technical Stack
@@ -138,13 +138,13 @@ export default async function Home() {
                 A selected set of tools I use to build scalable product-led software.
               </p>
             </div>
-            <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {site.skills.map((s) => (
                 <div
                   key={s.name}
-                  className="p-4 rounded-lg bg-surface ring-1 ring-black/5 border border-border/60"
+                  className="p-3 sm:p-4 rounded-lg bg-surface ring-1 ring-black/5 border border-border/60 hover:border-primary/30 transition-colors"
                 >
-                  <p className="text-sm font-medium">{s.name}</p>
+                  <p className="text-sm font-medium truncate">{s.name}</p>
                   <p className="text-[10px] font-mono text-muted-foreground mt-1 uppercase tracking-tighter">
                     {s.category}
                   </p>
@@ -156,20 +156,20 @@ export default async function Home() {
       </section>
 
       {/* Experience */}
-      <section className="py-24 px-6 border-t border-border/60">
+      <section className="py-16 md:py-20 lg:py-24 px-6 border-t border-border/60">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-12">
+          <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-8 md:mb-12">
             Selected Experience
           </h2>
-          <div className="space-y-12">
+          <div className="space-y-10 md:space-y-12">
             {site.experience.map((job) => (
-              <div key={job.role} className="relative pl-8 border-l border-border">
+              <div key={job.role} className="relative pl-6 md:pl-8 border-l border-border">
                 <div className="absolute -left-1 top-0 size-2 rounded-full bg-primary ring-4 ring-background" />
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                  <h3 className="text-xl font-medium">{job.role}</h3>
+                  <h3 className="text-lg md:text-xl font-medium">{job.role}</h3>
                   <span className="font-mono text-xs text-muted-foreground">{job.period}</span>
                 </div>
-                <p className="text-primary text-sm mt-1 mb-4">{job.company}</p>
+                <p className="text-primary text-sm mt-1 mb-3 md:mb-4">{job.company}</p>
                 <ul className="text-muted-foreground text-sm max-w-[75ch] leading-relaxed text-pretty space-y-2 list-disc pl-4">
                   {job.bullets.map((b) => (
                     <li key={b}>{b}</li>
@@ -182,10 +182,10 @@ export default async function Home() {
       </section>
 
       {/* About */}
-      <section className="py-24 px-6 border-t border-border/60">
+      <section className="py-16 md:py-20 lg:py-24 px-6 border-t border-border/60">
         <div className="max-w-7xl mx-auto">
-          <div className="grid">
-            <div className="pb-3">
+          <div>
+            <div className="mb-6 md:mb-8">
               <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-4">
                 About
               </h2>
@@ -193,16 +193,16 @@ export default async function Home() {
                 A little more about who I am and how I work.
               </p>
             </div>
-            <div className="lg:col-span-3 space-y-5">
+            <div className="space-y-5 max-w-[75ch]">
               {site.bio.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="text-muted-foreground leading-relaxed text-pretty max-w-[75ch]"
+                  className="text-muted-foreground leading-relaxed text-pretty"
                 >
                   {paragraph}
                 </p>
               ))}
-              <div className="flex gap-4 pt-2">
+              <div className="flex flex-wrap gap-4 sm:gap-6 pt-2">
                 <a
                   href={site.socials.linkedin}
                   target="_blank"
@@ -232,14 +232,14 @@ export default async function Home() {
       </section>
 
       {/* Contact */}
-      <section className="py-24 px-6 border-t border-border/60">
+      <section className="py-16 md:py-20 lg:py-24 px-6 border-t border-border/60">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-1">
                 Get in touch
               </h2>
-              <p className="text-sm text-muted-foreground mt-1 mb-8 max-w-[45ch] text-pretty">
+              <p className="text-sm text-muted-foreground mt-1 mb-6 md:mb-8 max-w-[45ch] text-pretty">
                 Have a question, project idea, or just want to say hi? Drop me a message.
               </p>
               <div className="space-y-3">
@@ -254,7 +254,7 @@ export default async function Home() {
                   <MapPin className="size-4" />
                   {site.location}
                 </p>
-                <div className="flex gap-4 pt-2">
+                <div className="flex flex-wrap gap-4 pt-2">
                   <a
                     href={site.socials.linkedin}
                     target="_blank"
@@ -280,9 +280,9 @@ export default async function Home() {
       </section>
 
       {/* Blog */}
-      <section className="py-24 px-6 border-t border-border/60">
+      <section className="py-16 md:py-20 lg:py-24 px-6 border-t border-border/60">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-8 md:mb-12">
             <div>
               <h2 className="font-mono text-xs text-muted-foreground uppercase tracking-widest mb-1">
                 Journal & Notes
@@ -299,15 +299,19 @@ export default async function Home() {
             </Link>
           </div>
           {recentPosts.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-6">
-              {recentPosts.map((post) => (
-                <BlogCard key={post.id} post={post} />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {recentPosts.map((post, idx) => (
+                <div key={post.id} className={idx === 0 ? "sm:col-span-2 lg:col-span-1" : ""}>
+                  <BlogCard post={post} featured={idx === 0} />
+                </div>
               ))}
             </div>
           ) : (
-            <p className="text-muted-foreground max-w-[56ch] leading-relaxed">
-              No posts yet. Check back soon!
-            </p>
+            <div className="text-center py-16 border border-dashed border-border/60 rounded-xl">
+              <p className="text-muted-foreground text-sm">
+                No posts yet. Check back soon!
+              </p>
+            </div>
           )}
         </div>
       </section>

@@ -30,7 +30,6 @@ export const site = {
     // AI & Tooling
     { name: "Claude Code", category: "AI Tooling" },
     { name: "MCP Servers", category: "AI Tooling" },
-    { name: "Anthropic API", category: "AI Tooling" },
     { name: "LLM Integration", category: "AI Tooling" },
     // Data & Testing
     { name: "Apache ECharts / Cube.js", category: "Data Viz" },

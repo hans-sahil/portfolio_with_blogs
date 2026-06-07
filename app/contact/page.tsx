@@ -15,15 +15,15 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <main className="max-w-3xl mx-auto px-6 py-24">
-        <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
+      <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
           Get in touch
         </h1>
-        <p className="text-lg text-muted-foreground mb-16 max-w-[56ch] text-pretty">
+        <p className="text-base sm:text-lg text-muted-foreground mb-12 md:mb-16 max-w-[56ch] text-pretty">
           Have a question, project idea, or just want to say hi? Drop me a message.
         </p>
 
-        <div className="grid md:grid-cols-[1fr_280px] gap-12">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-[1fr_280px] gap-10 md:gap-12">
           <ContactForm />
 
           <aside className="space-y-8">
