@@ -42,7 +42,7 @@ export const site = {
     {
       role: "Full-Stack Developer",
       company: "Taghash",
-      period: "April 2024 — Present",
+      period: "April 2024 — April 2026",
       bullets: [
         "Engineered a full-stack Fund Performance & Investment Analytics platform for Limited Partners — built with Next.js, TypeScript, Tailwind CSS, Redux Toolkit, and React Query.",
         "Architected Express.js REST services on MVC structure with optimized PostgreSQL schemas and secure RBAC auth middleware — reduced load time by ~30% via API and SSR optimizations.",
