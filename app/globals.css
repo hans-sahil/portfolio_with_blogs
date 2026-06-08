@@ -148,6 +148,113 @@
   }
 }
 
+/* Resizable Image Styles for Editor */
+.resizable-image-wrapper {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  margin: 1rem 0;
+  cursor: default;
+}
+
+.resizable-image-wrapper.resizable-image-selected {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.resizable-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.resizable-image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.resize-handles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border: 2px solid var(--color-background);
+  border-radius: 2px;
+  pointer-events: all;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.resize-handle:hover {
+  transform: scale(1.2);
+}
+
+.resize-handle-nw {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+.resize-handle-n {
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  cursor: ns-resize;
+}
+.resize-handle-ne {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+.resize-handle-e {
+  top: 50%;
+  margin-top: -5px;
+  right: -5px;
+  cursor: ew-resize;
+}
+.resize-handle-se {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+.resize-handle-s {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  cursor: ns-resize;
+}
+.resize-handle-sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+.resize-handle-w {
+  top: 50%;
+  margin-top: -5px;
+  left: -5px;
+  cursor: ew-resize;
+}
+
+/* Blog post image styles */
+.prose img {
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+.prose figure img {
+  margin: 0;
+}
+
 /* Mobile menu overlay */
 @layer utilities {
   .mobile-menu-open {
