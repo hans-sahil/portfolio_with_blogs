@@ -108,23 +108,28 @@ export function RichTextEditor({
       setUploadError("");
 
       try {
-        const formData = new FormData();
-        formData.append("file", file);
-
-        const res = await fetch("/api/upload", {
-          method: "POST",
-          body: formData,
-        });
-
-        if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.error || "Upload failed");
+        // Validate file type
+        const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"];
+        if (!allowedTypes.includes(file.type)) {
+          throw new Error("Invalid file type. Allowed: jpg, png, webp, gif, svg");
         }
 
-        const data = await res.json();
+        // Validate file size (max 5MB)
+        const maxSize = 5 * 1024 * 1024;
+        if (file.size > maxSize) {
+          throw new Error("File too large. Maximum size is 5MB");
+        }
+
+        // Convert to base64 data URL
+        const reader = new FileReader();
+        const dataUrl = await new Promise<string>((resolve, reject) => {
+          reader.onload = () => resolve(reader.result as string);
+          reader.onerror = () => reject(new Error("Failed to read file"));
+          reader.readAsDataURL(file);
+        });
 
         editor.chain().focus().setResizableImage({
-          src: data.url,
+          src: dataUrl,
           width: "100%",
         }).run();
 
