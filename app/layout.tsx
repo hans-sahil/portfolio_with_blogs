@@ -16,6 +16,30 @@ export const metadata: Metadata = {
   title: "Sahil Hans — AI Full-Stack Engineer",
   description:
     "Full-stack engineer building scalable web applications with React, TypeScript, and Node.js — leveraging AI tooling, Claude Code, and MCP servers.",
+  metadataBase: new URL("https://sahil-portfolio-ashen.vercel.app"),
+  openGraph: {
+    title: "Sahil Hans — AI Full-Stack Engineer",
+    description:
+      "Full-stack engineer building scalable web applications with React, TypeScript, and Node.js — leveraging AI tooling, Claude Code, and MCP servers.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Sahil Hans",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 200,
+        height: 200,
+        alt: "Sahil Hans",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sahil Hans — AI Full-Stack Engineer",
+    description:
+      "Full-stack engineer building scalable web applications with React, TypeScript, and Node.js — leveraging AI tooling, Claude Code, and MCP servers.",
+    images: ["/profile.jpg"],
+  },
 };
 
 export default function RootLayout({

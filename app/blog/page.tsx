@@ -23,7 +23,7 @@ export default async function BlogPage() {
         <div className="mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-xs font-mono text-muted-foreground mb-6">
             <BookOpen className="size-3" />
-            Journal & Notes
+            Blog
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
             All posts
