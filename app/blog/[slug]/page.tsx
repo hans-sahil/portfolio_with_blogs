@@ -28,14 +28,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.publishedAt,
       authors: [post.author],
       tags: post.tags,
-      images: [
-        {
-          url: "https://sahil-portfolio-ashen.vercel.app/profile.jpg",
-          width: 200,
-          height: 200,
-          alt: "Sahil Hans",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
