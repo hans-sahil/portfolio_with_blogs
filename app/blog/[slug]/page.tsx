@@ -19,27 +19,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} — Sahil Hans`,
     description: post.excerpt,
+    metadataBase: new URL("https://sahil-portfolio-ashen.vercel.app"),
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `https://sahil-portfolio-ashen.vercel.app/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       authors: [post.author],
       tags: post.tags,
-      images: [
-        {
-          url: "/profile.jpg",
-          width: 200,
-          height: 200,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: ["/profile.jpg"],
     },
   };
 }
