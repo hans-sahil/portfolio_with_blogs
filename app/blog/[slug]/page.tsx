@@ -10,30 +10,52 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const SITE_URL = "https://sahil-portfolio-ashen.vercel.app";
+
+/** Extract the first valid image URL from HTML content.
+ *  Skips base64 data URIs since they won't work in link previews. */
+function firstImageFromHtml(html: string): string | null {
+  const imgRegex = /<img[^>]+src=["']([^"']+)["']/gi;
+  const match = imgRegex.exec(html);
+  if (!match) return null;
+
+  const src = match[1];
+  // Skip base64 data URIs — social platforms can't render them
+  if (src.startsWith("data:")) return null;
+
+  // Convert relative paths to absolute
+  if (src.startsWith("/")) return `${SITE_URL}${src}`;
+
+  return src;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await blogRepo.getBySlug(slug);
 
   if (!post) return { title: "Post Not Found" };
 
+  const firstImage = firstImageFromHtml(post.content) || `${SITE_URL}/profile.jpg`;
+
   return {
     title: `${post.title} — Sahil Hans`,
     description: post.excerpt,
-    metadataBase: new URL("https://sahil-portfolio-ashen.vercel.app"),
+    metadataBase: new URL(SITE_URL),
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://sahil-portfolio-ashen.vercel.app/blog/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       authors: [post.author],
       tags: post.tags,
+      images: [{ url: firstImage, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: ["https://sahil-portfolio-ashen.vercel.app/profile.jpg"],
+      images: [firstImage],
     },
   };
 }
